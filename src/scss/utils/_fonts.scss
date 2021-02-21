@@ -1,0 +1,8 @@
+@mixin font-face($url, $style) {
+  @font-face {
+    font-family: 'yk2';
+    src: url($url) format('woff');
+    font-weight: 600;
+    font-style: $style;
+  }
+}

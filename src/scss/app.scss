@@ -1,0 +1,12 @@
+@import './base/normalize';
+
+
+@import './base/typography';
+
+@import './utils/variables';
+
+body {
+  font-family: 'yk2';
+  background: url('./../images/background.jpg');
+
+}

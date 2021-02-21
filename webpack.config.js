@@ -8,18 +8,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: './src/app.js',
   output:{
+    publicPath: '',
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist/')
-},
-  devServer: {
-    port: 8080,
-    contentBase: 'src',
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
-    }),
+    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
@@ -29,6 +23,14 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

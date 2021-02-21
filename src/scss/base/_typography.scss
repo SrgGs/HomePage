@@ -1,0 +1,4 @@
+@import '../utils/fonts';
+
+@include font-face('./../fonts/Y2K_neophyte.woff', 'normal');
+@include font-face('./../fonts/Y2K_neophyte_italic.woff', 'italic');
